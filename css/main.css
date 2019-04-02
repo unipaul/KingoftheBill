@@ -1,0 +1,377 @@
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+}
+
+/* ------------------------------------ */
+a {
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:link {
+    color: #808080;
+}
+
+/* A link that has been visited */
+a:visited {
+    color: #808080;
+}
+
+/* A link that is hovered on */
+a:hover {
+    color: blue;
+}
+
+/* A link that is selected */
+a:active {
+    color: #808080;
+}
+
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6 {margin: 0px;}
+
+p {margin: 0px;}
+
+li {
+
+list-style-position: outside;
+margin-left:1em;
+}
+ol, ul {
+
+list-style-position: outside;
+
+}
+
+
+
+/* ------------------------------------ */
+input {
+  display: block;
+	outline: none;
+	border: none !important;
+}
+
+input:required:invalid{ border: 2px solid black; }
+
+textarea {
+  display: block;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+/* ------------------------------------ */
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utiliti ]*/
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #c9d5e1; /*cccccc*/
+
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 450px;
+}
+
+table {
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+table thead tr {
+  height: 60px;
+  background: #100049;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: center;
+}
+table td.l, table th.l {
+  text-align: center;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 50px;
+  padding-left: 10px;
+}
+
+.column2 {
+  width: 200px;
+}
+
+.column3 {
+  width: 150px;
+}
+
+a {
+    color: #ccc;
+}
+
+/*-------------------------------------*/
+
+.cf:before, .cf:after{
+  content:"";
+  display:table;
+}
+
+.cf:after{
+  clear:both;
+}
+
+
+
+.form-wrapper {
+    width: 450px;
+    padding: 15px;
+    margin: 20px auto 8px auto;
+    background: #444;
+    background: rgba(0,0,0,.2);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+
+.form-wrapper input#donor {
+    width: 250px;
+    height: 40px;
+    padding: 10px 5px;
+    float: left;    
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+    border: 0;
+    background: #eee;
+    -webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 3px 3px 3px;      
+}
+.form-wrapper input#donation {
+    width: 70px;
+    height: 40px;
+    padding: 10px 5px;
+    float: left;    
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+    border: 0;
+    margin-left: 10px;
+    background: #eee;
+    -webkit-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;      
+}
+.form-wrapper input:focus {
+    outline: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+    
+
+.form-wrapper button {
+overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 90px;
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+    background: #100049;
+    -webkit-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;      
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+
+
+}   
+  
+.form-wrapper button:hover{   
+    background: #605a75;
+} 
+  
+.form-wrapper button:active,
+.form-wrapper button:focus{   
+    background: #605a75;    
+}
+
+.form-wrapper button:before {
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #100049 transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.form-wrapper button:hover:before{
+    border-right-color: #605a75;
+}
+
+.form-wrapper button:focus:before{
+    border-right-color: #605a75;
+}    
+
+.form-wrapper button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+.status{
+  font-family: OpenSans-Regular;
+  font-size: 13px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+
+.faq{
+
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+}
+

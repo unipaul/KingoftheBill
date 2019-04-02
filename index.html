@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>King of the Bill</title>
+	<meta name="viewport" content="width=500, initial-scale=0.70">
+	<link href="images/icons/crown.png" rel="icon" type="image/png" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="limiter">
+<div class="container">
+<div class="wrap-table100">
+<div class="table100">
+<table>
+	<thead>
+		<tr class="table100-head">
+			<th class="column1">#</th>
+			<th class="column2">Name</th>
+			<th class="column3">Donations</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="column1"><img src="images/icons/crown.png" /></td>
+			<td class="column2">
+			<div id="td01"></div>
+			</td>
+			<td class="column3" id="td02"></td>
+		</tr>
+		<tr>
+			<td class="column1">2</td>
+			<td class="column2" id="td11"></td>
+			<td class="column3" id="td12"></td>
+		</tr>
+		<tr>
+			<td class="column1">3</td>
+			<td class="column2" id="td21"></td>
+			<td class="column3" id="td22"></td>
+		</tr>
+		<tr>
+			<td class="column1">4</td>
+			<td class="column2" id="td31"></td>
+			<td class="column3" id="td32"></td>
+		</tr>
+		<tr>
+			<td class="column1">5</td>
+			<td class="column2" id="td41"></td>
+			<td class="column3" id="td42"></td>
+		</tr>
+		<tr>
+			<td class="column1">6</td>
+			<td class="column2" id="td51"></td>
+			<td class="column3" id="td52"></td>
+		</tr>
+		<tr>
+			<td class="column1">7</td>
+			<td class="column2" id="td61"></td>
+			<td class="column3" id="td62"></td>
+		</tr>
+		<tr>
+			<td class="column1">8</td>
+			<td class="column2" id="td71"></td>
+			<td class="column3" id="td72"></td>
+		</tr>
+		<tr>
+			<td class="column1">9</td>
+			<td class="column2" id="td81"></td>
+			<td class="column3" id="td82"></td>
+		</tr>
+		<tr>
+			<td class="column1">10</td>
+			<td class="column2" id="td91"></td>
+			<td class="column3" id="td92"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<form class="form-wrapper cf"><input id="donor" maxlength="25" placeholder="Enter Name..." required="" type="text" /> <input id="donation" placeholder="0.0 ETH" required="" type="text" /><button id="donateButton" onclick="donate()" type="submit">Donate</button></form>
+
+<div class="status">
+<div id="txStatus"></div>
+
+<div id="sumDonations"></div>
+</div>
+
+<div class="faq">
+<h3>What is &#39;King of the Bill&#39;?</h3>
+&#39;King of the Bill&#39; is a Dapp that forwards donations to charity and keeps a leaderboard of who donated the most.<br />
+&nbsp;
+<h3>Where are the donations going?</h3>
+The underlying smart contract forewards the donations automatically to <a href="https://www.givedirectly.org/">GiveDirectly</a>. GiveDirectly provides an income for households in Kenya, Uganda, and Rwanda via mobile phone-linked payment services. It targets extremely low-income households.<br />
+&nbsp;
+<h3>What do I need to use this Dapp?</h3>
+The browser extension <a href="https://metamask.io/">MetaMask</a> and some ETH.<br />
+&nbsp;
+<h3>Do you accept other currencies than ETH?</h3>
+This Dapp only works with ETH. But you can donate to GiveDirectly using BTC, XRP and any ERC20-Token.<br />
+See: <a href="https://www.givedirectly.org/give-now#">GiveDirectly.org/Give-Now</a><br />
+&nbsp;
+<h3>Can I trust that my donation will reach the charity?</h3>
+See for yourself:
+
+<ol>
+	<li>Check if this front end connects to <a href="https://etherscan.io/address/0x0ebc0fd1a2ee16e1ab1f37e889f0bf1f7b854f33">this contract</a></li>
+	<li>Read the <a href="https://etherscan.io/address/0x0ebc0fd1a2ee16e1ab1f37e889f0bf1f7b854f33#code">verified contract code</a></li>
+	<li>Compare the donee address with the one provided by <a href="https://www.givedirectly.org/give-now#">GiveDirectly</a></li>
+</ol>
+&nbsp;
+
+<h3>Can I top up my donation?</h3>
+Yes. Just donate from the same address and your donation will be added to your previous ones.<br />
+&nbsp;
+<h3>Can I change my name?</h3>
+Yes. Just donate from the same address and enter a new name.<br />
+&nbsp;
+<h3>How can I contact you?</h3>
+Please send questions, suggestions, praise and criticism to: Kingofthebill<!-- >@. -->@<!--- >.@ -->proto<!-- @>. -->nmail.<!--- .>@ -->com<br />
+&nbsp;</div>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/web3@0.19.1/dist/web3.js"></script><!--//20.7--><script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script language="javascript" type="text/javascript" src="js/abi.js"></script><script src="js/main.js"></script></body>
+</html>
