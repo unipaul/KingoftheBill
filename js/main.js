@@ -19,6 +19,7 @@ function displaysumDonations(web3){
 }
 
 function donate() {
+	window.ethereum.enable();
 	var name = document.getElementById("donor").value;
 	if(name.length > 25) {
 		name = name.substring(0,24)+"...";
