@@ -8,9 +8,14 @@ var KingoftheBill;
 var userAccount;
 
 function displaysumDonations(web3){
+
 	KingoftheBill.sumDonations(function(error, result){
 		if(!error){
-			$("#sumDonations").append(`Sum of all Donations: ${web3.fromWei(result.toNumber())} ETH`);
+			$("#sumDonations").append(`Sum of all donations: ${web3.fromWei(result.toNumber())} ETH`);
+			jQuery.getJSON('https://api.coincap.io/v2/rates/ethereum',  function(data) {
+				var rate = data.data.rateUsd; 
+				$("#sumDonations").append(` ($${(web3.fromWei(result.toNumber())*rate).toFixed(2)})`);
+			});
 		}
 		else{
 		console.error(error);
