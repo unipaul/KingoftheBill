@@ -24,7 +24,6 @@ function displaysumDonations(web3){
 }
 
 function donate() {
-	window.ethereum.enable();
 	var name = document.getElementById("donor").value;
 	if(name.length > 25) {
 		name = name.substring(0,24)+"...";
@@ -32,7 +31,7 @@ function donate() {
 	var donation = document.getElementById("donation").value;
 	KingoftheBill.donate(name, {from: web3.eth.accounts[0], value: web3.toWei(donation, "ether")}, function(error, txhash){
 		if (!error)
-			$("#txStatus").text("Sending donation to Blockchain. This may take a while."); 
+			$("#txStatus").html('Sending your donation to the Blockchain. This may take a while.<br> See your transaction <a href="https://etherscan.io/tx/'+ txhash +'">here.</a><br><br>');
 		else
 			$("#txStatus").text(error);
 	});
@@ -111,20 +110,7 @@ function filltable(web3){
 		});
 	});
 
-	// var accountInterval = setInterval(function() {
-	// 	if (web3.eth.accounts[0] !== userAccount) {
-	// 	    userAccount = web3.eth.accounts[0];
-	// 	    KingoftheBill.getNameofDonor(userAccount, function(error, result){
-	// 	    	console.log(result);
-	// 	    	if (!error && result){
-	// 	    		document.getElementById("donor").value = result;
-	// 	    	}
-	// 	    	else{
-	// 	    		console.log(error);
-	// 	    	}
-	// 	    });
-	// 	  }
-	// }, 300);
+	
 }
 
 window.addEventListener('load', function(){
@@ -137,7 +123,7 @@ window.addEventListener('load', function(){
 			
 			var web3js = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/4413cef8ae2848059c206a0808da8ce6'));
 	}
-
+	window.ethereum.enable();
 	KingoftheBill =	web3js.eth.contract(ABI).at('0x0EbC0FD1a2ee16e1AB1f37e889f0bF1f7B854f33');
 	filltable(web3js);
 	displaysumDonations(web3js);
