@@ -24,20 +24,28 @@ function displaysumDonations(web3){
 }
 
 function donate() {
+
 	var name = document.getElementById("donor").value;
 	if(name.length > 25) {
 		name = name.substring(0,24)+"...";
 	}
 	var donation = document.getElementById("donation").value;
-	KingoftheBill.donate(name, {from: web3.eth.accounts[0], value: web3.toWei(donation, "ether")}, function(error, txhash){
+	window.ethereum.enable()
+	.then(function(accounts){
+	KingoftheBill.donate(name, {from: accounts[0], value: web3.toWei(donation, "ether")}, function(error, txhash){
 		if (!error)
 			$("#txStatus").html('Sending your donation to the Blockchain. This may take a while.<br> See your transaction <a href="https://etherscan.io/tx/'+ txhash +'">here.</a><br><br>');
 		else
-			$("#txStatus").text(error);
+			$("#txStatus").text("Transaction cancelled");
+			console.log(error);
 	});
 
-}
+	})
+	.catch(function (reason) {
+    	console.log(reason);
+	})
 
+}
 function filltable(web3){
 	var table = [];
 	var unique = [];
