@@ -123,9 +123,10 @@ window.addEventListener('load', function(){
 			
 			var web3js = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/4413cef8ae2848059c206a0808da8ce6'));
 	}
-	window.ethereum.enable();
+	
 	KingoftheBill =	web3js.eth.contract(ABI).at('0x0EbC0FD1a2ee16e1AB1f37e889f0bF1f7B854f33');
 	filltable(web3js);
 	displaysumDonations(web3js);
+	window.ethereum.enable();
 
 })
